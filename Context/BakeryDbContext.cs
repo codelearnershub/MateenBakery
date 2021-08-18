@@ -65,16 +65,6 @@ namespace CarRentalsSystem.Models
 
 
 
-
-            modelBuilder.Entity<FlockType>().Property(u => u.Name).IsRequired();
-
-            modelBuilder.Entity<FlockType>().Property(u => u.Description).IsRequired();
-
-            modelBuilder.Entity<FlockType>().Property(u => u.CreatedBy).IsRequired();
-
-
-
-
             modelBuilder.Entity<Sales>().Property(u => u.Item).IsRequired();
 
             modelBuilder.Entity<Sales>().Property(u => u.CreatedBy).IsRequired();
@@ -88,17 +78,6 @@ namespace CarRentalsSystem.Models
 
 
 
-
-            modelBuilder.Entity<StoreItem>().Property(u => u.Name).IsRequired();
-
-            modelBuilder.Entity<StoreItem>().Property(u => u.ItemType).IsRequired();
-
-            modelBuilder.Entity<StoreItem>().Property(u => u.CreatedBy).IsRequired();
-
-
-
-
-
             modelBuilder.Entity<UserRole>().HasIndex(u => new { u.UserId, u.RoleId }).IsUnique();
             modelBuilder.Entity<UserRole>().Property(u => u.CreatedBy).IsRequired();
 
@@ -109,6 +88,8 @@ namespace CarRentalsSystem.Models
 
 
             modelBuilder.Entity<Purchase>().Property(u => u.CreatedBy).IsRequired();
+            modelBuilder.Entity<Category>().Property(u => u.CreatedBy).IsRequired();
+           
 
         }
     }
