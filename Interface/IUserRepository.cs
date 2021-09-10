@@ -10,7 +10,9 @@ namespace BakeryManagementSystem.Interface
     {
         public User Add(User user);
 
-        public User FindById(int userId);
+        public User FindUserById(int userId);
+
+        public User FindUserByEmail(string Email);
 
         public User Update(User user);
 

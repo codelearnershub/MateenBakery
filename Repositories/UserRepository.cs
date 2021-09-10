@@ -1,16 +1,13 @@
 ﻿using BakeryManagementSystem.Interface;
 using BakeryManagementSystem.Models;
 using BakeryManagementSystem.Context;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BakeryManagementSystem.Repositories
 {
-    public class UserRepository : IUserRepository
+    public abstract class UserRepository : IUserRepository
     {
-        private readonly BakeryDbContext _dbContext;
+        private static BakeryDbContext _dbContext;
 
         public UserRepository(BakeryDbContext dbContext)
         {
@@ -26,7 +23,7 @@ namespace BakeryManagementSystem.Repositories
 
         public void Delete(int userId)
         {
-            var user = FindById(userId);
+            var user = FindUserById(userId);
 
             if (user != null)
             {
@@ -35,11 +32,15 @@ namespace BakeryManagementSystem.Repositories
             }
         }
 
-        public User FindById(int userId)
+        public User FindUserById(int userId)
         {
             return _dbContext.Users.FirstOrDefault(u => u.Id.Equals(userId));
         }
-
+        public User FindUserByEmail(string email)
+        {
+            return _dbContext.Users.FirstOrDefault(u => u.Email.Equals(email));
+        }
+        
         public User Update(User user)
         {
             _dbContext.Users.Update(user);

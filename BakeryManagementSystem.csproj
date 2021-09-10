@@ -16,7 +16,15 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="MySql.Data" Version="8.0.22" />
-    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22"/>
+    <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Message" />
+    <Folder Include="Views\Purchace" />
+    <Folder Include="Views\Sales" />
+    <Folder Include="Views\SalesItem" />
+    <Folder Include="Views\Stock" />
   </ItemGroup>
 
 </Project>

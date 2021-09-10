@@ -15,5 +15,9 @@ namespace BakeryManagementSystem.Interface
         public Role Update(Role role);
 
         public void Delete(int roleId);
+
+        public List<Role> GetAllRole();
+        public Role FindRoleByName(string name);
+        public List<UserRole> FindUserRoles(int userId);
     }
 }

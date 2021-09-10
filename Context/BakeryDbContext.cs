@@ -1,9 +1,5 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using BakeryManagementSystem.Models;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BakeryManagementSystem.Context
 {
@@ -64,7 +60,6 @@ namespace BakeryManagementSystem.Context
 
             modelBuilder.Entity<Message>().Property(u => u.CreatedBy).IsRequired();
 
-
             modelBuilder.Entity<Sales>().Property(u => u.Item).IsRequired();
 
             modelBuilder.Entity<Sales>().Property(u => u.CreatedBy).IsRequired();
@@ -88,6 +83,8 @@ namespace BakeryManagementSystem.Context
 
 
             modelBuilder.Entity<Purchase>().Property(u => u.CreatedBy).IsRequired();
+            modelBuilder.Entity<Category>().Property(u => u.CreatedBy).IsRequired();
+           
 
             modelBuilder.Entity<Category>().Property(u => u.CreatedBy).IsRequired();
 

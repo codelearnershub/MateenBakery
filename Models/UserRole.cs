@@ -9,9 +9,9 @@ namespace BakeryManagementSystem.Models
 
         public int UserId { get; set; }
 
-        public List<User> User { get; set; }
+        public User User { get; set; }
 
-        public List<Role> Role { get; set; }
+        public Role Role { get; set; }
 
 
     }

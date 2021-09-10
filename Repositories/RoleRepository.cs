@@ -34,6 +34,34 @@ namespace BakeryManagementSystem.Repositories
                 _dbContext.SaveChanges();
             }
         }
+        
+        public void DeleteRole(string name)
+        {
+
+            var role = FindRoleByName(name);
+
+            if (role != null)
+            {
+                _dbContext.Roles.Remove(role);
+                _dbContext.SaveChanges();
+            }
+        }
+
+        public List<Role> GetAllRole()
+        {
+            return _dbContext.Roles.ToList();
+        }
+        
+        
+        public Role FindRoleByName(string name)
+        {
+            return _dbContext.Roles.FirstOrDefault(v => v.Name.Equals(name));
+        }
+     
+        public List<UserRole> FindUserRoles(int userId)
+        {
+            return _dbContext.UserRoles.Where(ur => ur.UserId == userId).ToList();
+        }
 
         public Role FindById(int roleId)
         {
